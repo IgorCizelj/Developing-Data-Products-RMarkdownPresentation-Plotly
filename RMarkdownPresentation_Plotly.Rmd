@@ -1,0 +1,25 @@
+---
+title: "R Markdown Presentation & Plotly"
+author: "Igor Cizelj, PhD"
+date: "November 2, 2016"
+output: ioslides_presentation
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = FALSE)
+```
+
+## Slide with Intro
+
+This is an R Markdown presentation that features a plot created with Plotly. 
+
+
+## Slide with Plot
+
+```{r pressure,echo=FALSE, message=FALSE}
+library(plotly)
+p <- ggplot(data = diamonds, aes(x = cut, fill = clarity)) +
+            geom_bar(position = "dodge")
+ggplotly(p)
+```
+
